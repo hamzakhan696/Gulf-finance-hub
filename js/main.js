@@ -23,17 +23,17 @@
   t("#preloader").fadeOut("normall", function () {
     t(this).remove();
   }),
-    s.on("scroll", function () {
-      var e = s.scrollTop(),
-        a = t(".navbar-brand img"),
-        o = t(".navbar-brand.logodefault img");
-      e <= 50
-        ? (t("header").removeClass("scrollHeader").addClass("fixedHeader"),
-          a.attr("src", "images/logo-removebg-preview.png"))
-        : (t("header").removeClass("fixedHeader").addClass("scrollHeader"),
-          a.attr("src", "images/logo.jpeg")),
-        o.attr("src", "images/logo-removebg-preview.png");
-    }),
+    // s.on("scroll", function () {
+    //   var e = s.scrollTop(),
+    //     a = t(".navbar-brand img"),
+    //     o = t(".navbar-brand.logodefault img");
+    //   e <= 50
+    //     ? (t("header").removeClass("scrollHeader").addClass("fixedHeader"),
+    //       a.attr("src", "images/logo-removebg-preview.png"))
+    //     : (t("header").removeClass("fixedHeader").addClass("scrollHeader"),
+    //       a.attr("src", "images/logo.jpeg")),
+    //     o.attr("src", "images/logo-removebg-preview.png");
+    // }),
     s.on("scroll", function () {
       500 < t(this).scrollTop()
         ? t(".scroll-to-top").fadeIn(400)
