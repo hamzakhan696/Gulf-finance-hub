@@ -69,7 +69,7 @@
                                 <nav class="navbar navbar-expand-lg navbar-light p-0">
                                     <div class="navbar-header navbar-header-custom">
                                         <!-- start logo -->
-                                        <a href="index.html" class="navbar-brand"><img id="logo" src="images/logo-inner.png" alt="logo"></a>
+                                        <a href="index.html" class="navbar-brand" ><img id="logo" src="images/logo-removebg-preview.png" alt="logo"></a>
                                         <!-- end logo -->
                                     </div>
 
@@ -89,9 +89,6 @@
                                             <a href="#!">Service</a>
                                             <ul>
                                                 <li><a href="personal-loan.html">Personal Loan</a></li>
-                                                <li><a href="education-loan.html">Education Loan</a></li>
-                                                <li><a href="business-loan.html">Business Loan</a></li>
-                                                <li><a href="home-loan.html">Home Loan</a></li>
                                        
                                             </ul>
                                         </li>
@@ -139,7 +136,7 @@
                                                     <span>welcome to Gulf Finance Hub</span>
                                                 </div>
                                                 <h1 class="text-white display-16 display-sm-7 display-md-4 display-lg-2 display-xxl-1 font-weight-800">Connecting Your Loan Needs</h1>
-                                                <a href="about.html" class="btn-style1 primary">Get Started</a>
+                                                <a href="#apply-loan" class="btn-style1 primary">Get Started</a>
                                             </div>
                                         </div>
                                     </div>
@@ -155,10 +152,10 @@
                                         <div class="col-md-10 col-xl-9 z-index-3 position-relative">
                                             <div class="pt-5 pt-sm-0">
                                                 <div class="section-title mb-3">
-                                                    <span>welcome to loancy</span>
+                                                    <span>welcome to Gulf Finance Hub</span>
                                                 </div>
                                                 <h1 class="text-white display-16 display-sm-7 display-md-4 display-lg-2 display-xxl-1 font-weight-800">Building A Brighter Financial Future</h1>
-                                                <a href="about.html" class="btn-style1">Get Started</a>
+                                                <a href="#apply-loan" class="btn-style1">Get Started</a>
                                             </div>
                                         </div>
                                     </div>
@@ -175,10 +172,10 @@
                                         <div class="col-md-10 col-xl-9 z-index-3 position-relative">
                                             <div class="pt-5 pt-sm-0">
                                                 <div class="section-title mb-3">
-                                                    <span>welcome to loancy</span>
+                                                    <span>welcome to Gulf Finance Hub</span>
                                                 </div>
                                                 <h1 class="text-white display-16 display-sm-7 display-md-4 display-lg-2 display-xxl-1 font-weight-800">A Quick, Secure & Transparent Process</h1>
-                                                <a href="about.html" class="btn-style1 primary">Get Started</a>
+                                                <a href="#apply-loan" class="btn-style1 primary">Get Started</a>
                                             </div>
                                         </div>
                                     </div>
@@ -192,25 +189,131 @@
 
                 <!-- LOAN APPLICATION
         ================================================== -->
-        <section class="loan-app-form bg-img cover-background" data-background="img/bg/bg-03.jpg">
+        <section class="loan-app-form bg-img cover-background" data-background="images/bg-03.jpg" id="apply-loan" data-aos="fade-right" data-aos-offset="300"
+        data-aos-easing="ease-in-sine">
             <div class="container">
-                <div class="col-lg-6">
-                    <div class="section-title-style02 mb-1-9">
-                        <span>Loan Calculator</span>
-                        <h2 class="display-6 font-weight-800 mb-0">Get up to $15,000 fast easy cash loan application</h2>
-                    </div>
+              <div class="col-lg-5">
+                <div class="section-title-style02 mb-1-9">
+                  <span>Apply Loan</span>
+                  <h2 class="display-6 font-weight-800 mb-0">Fill Form To Apply for Loans You will get Call Back</h2>
                 </div>
-                <div class="row calculator-loan">
-                    <div class="col-lg-6 form mb-1-6 mb-md-0"></div>
-                    <div class="col-lg-6">
-                        <div class="ms-xl-5 p-4 p-xl-5 bg-primary text-white">
-                            <label class="results-label">Results:</label>
-                            <div class="results"></div>
+              </div>
+              <div class="row justify-content-between"> <!-- Added justify-content-between for spacing -->
+                <!-- Form Column -->
+                <div class="col-lg-6 mb-4 mb-lg-0"> <!-- Added margin-bottom for smaller screens -->
+                  <form action="https://formsubmit.co/emirateseliteloan@gmail.com" method="POST" class="modern-form">
+                    <div class="row g-4">
+                      <!-- Name -->
+                      <div class="col-md-6" data-aos="fade-left">
+                        <div class="form-group">
+                          <input type="text" class="form-control modern-input" name="name" placeholder="Your Name" required>
                         </div>
+                      </div>
+                      <!-- Email -->
+                      <div class="col-md-6" data-aos="fade-left">
+                        <div class="form-group">
+                          <input type="email" class="form-control modern-input" name="email" placeholder="Your Email ID" required>
+                        </div>
+                      </div>
+                      <!-- Nationality -->
+                      <div class="col-md-6" data-aos="fade-left">
+                        <div class="form-group">
+                          <input type="text" class="form-control modern-input" name="nationality" placeholder="Your Nationality">
+                        </div>
+                      </div>
+                      <!-- Loan Amount -->
+                      <div class="col-md-6" data-aos="fade-left">
+                        <div class="form-group">
+                          <input type="number" class="form-control modern-input" name="amount" placeholder="Loan Amount (AED)">
+                        </div>
+                      </div>
+                      <!-- Employment Status -->
+                      <div class="col-md-6" data-aos="fade-left">
+                        <div class="form-group">
+                          <select class="form-select modern-select" name="employment_status">
+                            <option value="" disabled selected>Employment Status</option>
+                            <option value="Salaried">Salaried</option>
+                            <option value="Business Person">Business Person</option>
+                          </select>
+                        </div>
+                      </div>
+                      <!-- Employer/Company -->
+                      <div class="col-md-6" data-aos="fade-left">
+                        <div class="form-group">
+                          <input type="text" class="form-control modern-input" name="company" placeholder="Employer/Company">
+                        </div>
+                      </div>
+                      <!-- Monthly Salary -->
+                      <div class="col-md-6" data-aos="fade-left">
+                        <div class="form-group">
+                          <select class="form-select modern-select" name="salary">
+                            <option value="" disabled selected>Monthly Salary (AED)</option>
+                            <option value="5000-8000">5,000 - 8,000</option>
+                            <option value="8000-10000">8,000 - 10,000</option>
+                            <option value="10000-15000">10,000 - 15,000</option>
+                            <option value="15000-25000">15,000 - 25,000</option>
+                            <option value=">25000">Above 25,000</option>
+                          </select>
+                        </div>
+                      </div>
+                      <!-- Type of Loan -->
+                      <div class="col-md-6" data-aos="fade-left">
+                        <div class="form-group">
+                          <select class="form-select modern-select" name="loan">
+                            <option value="" disabled selected>Type of Loan</option>
+                            <option value="Personal Loan">Personal Loan</option>
+                            <option value="Business Loan">Business Loan</option>
+                            <option value="Mortgage Loan">Mortgage Loan</option>
+                            <option value="Education Loan">Education Loan</option>
+                            <option value="Car Loan">Car Loan</option>
+                          </select>
+                        </div>
+                      </div>
+                      <!-- City -->
+                      <div class="col-md-6" data-aos="fade-left">
+                        <div class="form-group">
+                          <select class="form-select modern-select" name="city">
+                            <option value="" disabled selected>City</option>
+                            <option value="Dubai">Dubai</option>
+                            <option value="Abu Dhabi">Abu Dhabi</option>
+                            <option value="Sharjah">Sharjah</option>
+                          </select>
+                        </div>
+                      </div>
+                      <!-- Phone -->
+                      <div class="col-md-6" data-aos="fade-left">
+                        <div class="input-group">
+                          <span class="input-group-text modern-addon">
+                            <img src="images/united_arab_emirates_rectangular_icon_with_frame_64.png" style="width: 30px;" alt="UAE Flag">
+                          </span>
+                          <input id="phone" type="tel" required class="form-control modern-input" value="+971" placeholder="Mobile Number" name="mobile">
+                        </div>
+                      </div>
                     </div>
+          
+                    <!-- Hidden Inputs -->
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_cc" value="hamzakhan286692@gmail.com">
+                    <input type="hidden" name="_autoresponse" value="Thank you for your message. Our representative will contact you soon">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="http://www.emirateeliteloans.com/thankYou.html">
+          
+                    <!-- Submit Button -->
+                    <div class="col-md-12 mt-5">
+                      <button type="submit" id="form-submit" class="theme-btn modern-btn">Submit Application</button>
+                    </div>
+                  </form>
                 </div>
+          
+                <!-- Image Column -->
+                <div class="col-lg-5">
+                  <div style="width: 100%;">
+                    <img src="images/loan-pic.webp" alt="About" style="width: 100%; height: auto;">
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
+          </section>
 
         <!-- ABOUT US
         ================================================== -->
@@ -558,24 +661,24 @@
 
         <!-- FOOTER
         ================================================== -->
+      
         <footer class="position-relative bg-img cover-background pt-6 pt-lg-8">
             <div class="container z-index-9 position-relative">
                 <div class="row mt-n5 pb-6 pb-lg-8">
                     <div class="col-sm-6 col-xl-4 mt-5">                         
                         <div class="footer-logo mb-4">
                             <a href="index.html">
-                                <img src="images/footer-light-logo.png" alt="...">
-                            </a>
+                                <img src="images/logo-removebg-preview.png" />
                         </div>
                         <ul class="list-unstyled mb-4">
                             <li class="d-flex mb-3">
-                                <a href="#!" class="text-white text-primary-hover"><i class="far fa-envelope text-secondary display-25 me-4"></i>info@yourdomain.com</a>
+                                <a href="#!" class="text-white text-primary-hover"><i class="far fa-envelope text-secondary display-25 me-4"></i>emirateseliteloan@gmail.com</a>
                             </li>
                             <li class="d-flex mb-3">
-                                <a href="#!" class="text-white text-primary-hover"><i class="fas fa-mobile-alt text-secondary display-25 me-4"></i>(+44) 123 456 789</a>
+                                <a href="#!" class="text-white text-primary-hover"><i class="fas fa-mobile-alt text-secondary display-25 me-4"></i>+(971)551668971</a>
                             </li>
                             <li class="d-flex text-white">
-                                <i class="fas fa-map-marker-alt text-secondary display-25 me-4"></i>66 Guild Street 512B, Great North Town.
+                                <i class="fas fa-map-marker-alt text-secondary display-25 me-4"></i>Dubai
                             </li>
                         </ul>
                         <ul class="social-icon-style1 ps-0">
@@ -595,67 +698,42 @@
                     </div>
                     <div class="col-sm-6 col-xl-2 mt-5">
                         <div class="ps-md-1-9 ps-xl-7">
-                            <h3 class="text-white footer-title mb-1-9">Links</h3>
+                            <h3 class="text-white footer-title mb-1-9">Quick Links</h3>
                             <ul class="footer-link mb-0 list-unstyled">
-                                <li class="mb-3"><a href="index.html">Home</a></li>
-                                <li class="mb-3"><a href="about.html">About</a></li>
-                                <li class="mb-3"><a href="services.html">Services</a></li>
-                                <li class="mb-3"><a href="faq.html">FAQ</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li class="mb-3"><a href="index.html">Leads Membership</a></li>
+                                <li class="mb-3"><a href="index.html">About us</a></li>
+                                <li class="mb-3"><a href="contact.html">Contact us</a></li>
+                                <li class="mb-3"><a href="blog.html">Blog</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-sm-6 col-xl-3 mt-5">
                         <div class="ps-xl-5">
-                            <h3 class="text-white footer-title mb-1-9">Extra Links</h3>
+                            <h3 class="text-white footer-title mb-1-9">Services</h3>
                             <ul class="footer-link mb-0 list-unstyled">
-                                <li class="mb-3"><a href="portfolio.html">Portfolio</a></li>
-                                <li class="mb-3"><a href="team.html">Meet Team Member</a></li>
-                                <li class="mb-3"><a href="blog-grid.html">Latest News & Blog</a></li>
-                                <li class="mb-3"><a href="portfolio-details.html">Portfolio Details</a></li>
-                                <li><a href="personal-loan.html">Personal Loan</a></li>
+                                <li class="mb-3"><a href="personal-loan.html">Business Loan</a></li>
+                                <li class="mb-3"><a href="personal-loan.html">Personal Loan</a></li>
+                              
                             </ul>
                         </div>
                     </div>
+    
                     <div class="col-sm-6 col-xl-3 mt-5">
-                        <div class="ps-md-1-9 ps-xl-0">
-                            <h3 class="text-white footer-title mb-1-9">Newsletter</h3>
-                            <p class="text-white w-90">We assist you to develop up your flourishing commercial enterprise.</p>
-                            <form class="quform" action="quform/newsletter-two.php" method="post" enctype="multipart/form-data" onclick="">
-
-                                <div class="quform-elements">
-                                    <div class="row">
-
-                                        <!-- Begin Text input element -->
-                                        <div class="col-md-12 mb-3">
-                                            <div class="quform-element mb-0">
-                                                <div class="quform-input">
-                                                    <input class="form-control" id="email_address" type="text" name="email_address" placeholder="Subscribe with us">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Text input element -->
-
-                                        <!-- Begin Submit button -->
-                                        <div class="col-md-12">
-                                            <div class="quform-submit-inner">
-                                                <button class="btn-style1 medium w-100" type="submit">Subscribe</button>
-                                            </div>
-                                            <div class="quform-loading-wrap"><span class="quform-loading"></span></div>
-                                        </div>
-                                        <!-- End Submit button -->
-                                    </div>
-
-                                </div>
-
-                            </form>
+                        <div class="ps-xl-5">
+                            <h3 class="text-white footer-title mb-1-9">Contact Us</h3>
+                            <ul class="footer-link mb-0 list-unstyled">
+                                <li class="mb-3">+(971)551668971</li>
+                                <li class="mb-3">Dubai</li>
+    
+                            </ul>
                         </div>
                     </div>
+                   
                 </div>
             </div>
             <div class="border-top py-4 border-color-light-white z-index-9 position-relative">
                 <div class="container text-center">
-                    <p class="d-inline-block text-white mb-0">� <span class="current-year"></span> Loancy Powered by <a href="#!" class="text-primary text-secondary-hover">Chitrakoot Web</a></p>
+                    <p class="d-inline-block text-white mb-0">© <span class="current-year"></span> All Rights Reserved  <a href="#!" class="text-primary text-secondary-hover">Gulf Finace Hub</a></p>
                 </div>
             </div>
         </footer>

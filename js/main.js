@@ -29,10 +29,10 @@
         o = t(".navbar-brand.logodefault img");
       e <= 50
         ? (t("header").removeClass("scrollHeader").addClass("fixedHeader"),
-          a.attr("src", "img/logos/logo-inner.png"))
+          a.attr("src", "images/logo-removebg-preview.png"))
         : (t("header").removeClass("fixedHeader").addClass("scrollHeader"),
-          a.attr("src", "img/logos/logo.png")),
-        o.attr("src", "img/logos/logo.png");
+          a.attr("src", "images/logo.jpeg")),
+        o.attr("src", "images/logo-removebg-preview.png");
     }),
     s.on("scroll", function () {
       500 < t(this).scrollTop()
