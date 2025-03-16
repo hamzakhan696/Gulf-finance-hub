@@ -17,7 +17,9 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- plugins -->
     <link rel="stylesheet" href="css/plugins.css">
 
@@ -30,8 +32,210 @@
     <!-- theme core css -->
     <link href="css/styles.css" rel="stylesheet">
 
-</head>
 
+
+</head>
+<style>
+    .slider {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .slider-track {
+            display: flex;
+            width: 300%; /* 3 slides visible at a time out of total slides */
+            animation: slide 20s infinite linear;
+        }
+
+        .slide {
+            flex: 0 0 33.333%; /* 3 slides visible */
+            max-width: 380px;
+            padding: 15px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .slide img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .slide h2 {
+            font-size: 15px;
+            font-weight: normal;
+            margin: 0 0 10px;
+            line-height: 1;
+        }
+
+        .slide p {
+            margin: 0 0 10px;
+            color: #000000;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 30px;
+            font-size: 15px;
+            border-radius: 5px;
+            color: #ffffff;
+            background-color: #ff399b;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e6308a;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-66.666%); } /* Move two-thirds to show all slides */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 991px) {
+            .slide {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+            .slider-track {
+                width: 500%;
+            }
+            @keyframes slide {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-80%); }
+            }
+        }
+
+        @media (max-width: 767px) {
+            .slide {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            .slider-track {
+                width: 800%;
+            }
+            @keyframes slide {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-87.5%); }
+            }
+        }
+    .container-card {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .heading {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+    }
+
+    .col {
+        flex: 0 0 16.666667%; /* 2 columns out of 12 = 1/6 */
+        max-width: 16.666667%;
+        padding: 0 15px;
+        margin-bottom: 20px;
+    }
+
+    .img-responsive {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Media Queries for Responsive Design */
+    @media (max-width: 991px) {
+        .col {
+            flex: 0 0 33.333333%; /* 4 columns */
+            max-width: 33.333333%;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .col {
+            flex: 0 0 50%; /* 6 columns */
+            max-width: 50%;
+        }
+    }
+
+    .heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        tr:hover {
+            background-color: #f0f0f0;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ffc64d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #ffc64d;
+        }
+
+        .btn-icon {
+            margin-left: 10px;
+        }
+
+        @media (max-width: 767px) {
+            th, td {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+        
+</style>
 <body>
 
     <!-- PAGE LOADING
@@ -42,14 +246,36 @@
     ================================================== -->
     <div class="main-wrapper">
 
-        <!-- HEADER
-        ================================================== -->
-        <header class="header-style1 menu_area-light">
-            <div class="navbar-default border-bottom border-color-light-white">
+        <header class="header-style2">
+
+            <!-- <div class="top-bar bg-secondary">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9 col-xs-12">
+                            <div class="top-bar-info">
+                                <ul class="ps-0">
+                                    <li><i class="ti-mobile"></i>+(971)551668971</li>
+                                    <li class="d-none d-sm-inline-block"><i class="ti-email"></i>emirateseliteloan@gmail.com</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-3 d-none d-md-block">
+                            <ul class="top-social-icon ps-0">
+                                <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="navbar-default border-bottom border-color-light-black">
 
                 <!-- start top search -->
                 <div class="top-search bg-primary">
-                    <div class="container-fluid px-lg-1-6 px-xl-2-5 px-xxl-2-9">
+                    <div class="container">
                         <form class="search-form" action="search.html" method="GET" accept-charset="utf-8">
                             <div class="input-group">
                                 <span class="input-group-addon cursor-pointer">
@@ -63,18 +289,18 @@
                 </div>
                 <!-- end top search -->
 
-                <div class="container-fluid px-lg-1-6 px-xl-2-5 px-xxl-2-9">
+                <div class="container">
                     <div class="row align-items-center">
                         <div class="col-12 col-lg-12">
                             <div class="menu_area alt-font">
                                 <nav class="navbar navbar-expand-lg navbar-light p-0">
                                     <div class="navbar-header navbar-header-custom">
                                         <!-- start logo -->
-                                        <a href="index.html" class="navbar-brand" ><img id="logo" src="images/logo-removebg-preview.png" alt="logo"></a>
+                                        <a href="index.html" class="navbar-brand logodefault" ><img id="logo" src="images/logo4.jpeg" alt="logo" style="border-radius: 50%;"></a>
                                         <!-- end logo -->
                                     </div>
 
-                                    <div class="navbar-toggler"></div>
+                                    <div class="navbar-toggler bg-secondary"></div>
 
                                     <!-- start menu area -->
                                     <ul class="navbar-nav ms-auto" id="nav" style="display: none;">
@@ -82,26 +308,25 @@
                                             <a href="#!">Home</a>
                                           
                                         </li>
-                                        <li>
-                                            <a href="#!">About</a>
-                                    
-                                        </li>
+                                      
                                         <li>
                                             <a href="#!">Service</a>
                                             <ul>
                                                 <li><a href="personal-loan.html">Personal Loan</a></li>
-                                       
+                                                <li><a href="education-loan.html">Credit Card</a></li>
+                                                <li><a href="business-loan.html">Business Loan</a></li>
+                                                
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href="#!">Leads Membership</a>
+                                            <a href="#!">Leads Membership </a>
                                            
                                         </li>
                                         <li>
                                             <a href="#!">Blog</a>
                                            
                                         </li>
-                                        <li><a href="contact.html">Contact Us</a></li>
+                                        <li><a href="contact-us.html">Contact Us</a></li>
                                     </ul>
                                     <!-- end menu area -->
 
@@ -109,7 +334,7 @@
                                     <div class="attr-nav align-items-xl-center ms-xl-auto main-font">
                                         <ul>
                                             <li class="search"><a href="#!"><i class="fas fa-search"></i></a></li>
-                                            <li class="d-none d-xl-inline-block"><a href="contact.html" class="btn-style1 medium text-white">Free Quote</a></li>
+                                            <li class="d-none d-xl-inline-block"><a href="contact.html" class=" medium text-white" style="background-color: #ffc64d; padding: 10px 22px"><span>Free Quote</span></a></li>
                                         </ul>
                                     </div>
                                     <!-- end attribute navigation -->
@@ -123,66 +348,14 @@
 
         <!-- BANNER
         ================================================== -->
-        <section class="full-screen py-0 top-position1">
-            <div class="container-fluid px-0">
-                <div class="slider-fade1 owl-carousel owl-theme w-100">
-                    <div class="item bg-img cover-background dark-overlay" data-overlay-dark="7" data-background="images/slide-02.jpg">
-                        <div class="container h-100">
-                            <div class="d-table w-100 h-100">
-                                <div class="d-table-cell align-middle">
-                                    <div class="row align-items-center justify-content-center text-center">
-                                        <div class="col-md-10 col-xl-9 z-index-3 position-relative">
-                                            <div class="pt-5 pt-sm-0">
-                                                <div class="section-title mb-3">
-                                                    <span>welcome to Gulf Finance Hub</span>
-                                                </div>
-                                                <h1 class="text-white display-16 display-sm-7 display-md-4 display-lg-2 display-xxl-1 font-weight-800">Connecting Your Loan Needs</h1>
-                                                <a href="#apply-loan" class="btn-style1 primary">Get Started</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item bg-img cover-background dark-overlay" data-overlay-dark="7" data-background="images/slider-1.webp">
-                        <div class="container h-100">
-                            <div class="d-table w-100 h-100">
-                                <div class="d-table-cell align-middle">
-                                    <div class="row align-items-center justify-content-center text-center">
-                                        <div class="col-md-10 col-xl-9 z-index-3 position-relative">
-                                            <div class="pt-5 pt-sm-0">
-                                                <div class="section-title mb-3">
-                                                    <span>welcome to Gulf Finance Hub</span>
-                                                </div>
-                                                <h1 class="text-white display-16 display-sm-7 display-md-4 display-lg-2 display-xxl-1 font-weight-800">Building A Brighter Financial Future</h1>
-                                                <a href="#apply-loan" class="btn-style1">Get Started</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div class="item bg-img cover-background dark-overlay" data-overlay-dark="7" data-background="images/blog-02.jpg">
-                        <div class="container h-100">
-                            <div class="d-table w-100 h-100">
-                                <div class="d-table-cell align-middle">
-                                    <div class="row align-items-center justify-content-center text-center">
-                                        <div class="col-md-10 col-xl-9 z-index-3 position-relative">
-                                            <div class="pt-5 pt-sm-0">
-                                                <div class="section-title mb-3">
-                                                    <span>welcome to Gulf Finance Hub</span>
-                                                </div>
-                                                <h1 class="text-white display-16 display-sm-7 display-md-4 display-lg-2 display-xxl-1 font-weight-800">A Quick, Secure & Transparent Process</h1>
-                                                <a href="#apply-loan" class="btn-style1 primary">Get Started</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <section class="py-6 py-md-16 py-lg-20 py-xxl-24 bg-img cover-background parallax dark-overlay" data-overlay-dark="7" data-background="images/slide-02.jpg">
+            <div class="container pt-1-9 pt-sm-6 pt-md-0 mt-n1-9">
+                <div class="row align-items-center position-relative z-index-1 justify-content-center">
+                    <div class="col-md-11 col-lg-9 col-xl-8 col-xxl-7 text-center">
+                        <span class="text-white text-uppercase small letter-spacing-4 d-block mb-2 font-weight-700">Welcome to Gulf Finace Hub.</span>
+                        <h1 class="text-white display-1 font-weight-800 mb-1-6 mb-sm-2-6">
+                            Connecting Your Loan Needs</h1>
+                        <a href="#apply-loan" class="btn-style1 primary">Get Started</a>
                     </div>
                 </div>
             </div>
@@ -316,92 +489,11 @@
             </div>
           </section>
 
-          <section class="bg-img cover-background dark-overlay" data-overlay-dark="8" data-background="images/bg-01.jpg">
-            <div class="container">
-                <div class="row mt-n1-9">
-                    <div class="col-sm-6 col-lg-3 mt-1-9 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="text-center">
-                            <h3 class="display-12 display-lg-10 display-xl-4 text-white"><span class="countup">532</span>+</h3>
-                            <p class="mb-0 lead text-white">Loans Approve</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 mt-1-9 wow fadeInUp" data-wow-delay="150ms">
-                        <div class="text-center">
-                            <h3 class="display-12 display-lg-10 display-xl-4 text-white"><span class="countup">90</span>+</h3>
-                            <p class="mb-0 lead text-white">Daily Payments</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
-                        <div class="text-center">
-                            <h3 class="display-12 display-lg-10 display-xl-4 text-white"><span class="countup">80</span>+</h3>
-                            <p class="mb-0 lead text-white">Happy Customers</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 mt-1-9 wow fadeInUp" data-wow-delay="250ms">
-                        <div class="text-center">
-                            <h3 class="display-12 display-lg-10 display-xl-4 text-white"><span class="countup">260</span>+</h3>
-                            <p class="mb-0 lead text-white">Expert People</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ABOUT US
-        ================================================== -->
-        <!-- <section class="about-style1">
-            <div class="container position-relative z-index-1">
-                <div class="row mt-n1-9 align-items-center">
-                    <div class="col-lg-6 mt-1-9 wow fadeIn" data-wow-delay="100ms">
-                        <div class="about-img position-relative text-center text-sm-end">
-                            <img src="images/about1.jpg" class="img1" alt="...">
-                            <img src="images/about2.jpg" class="img2" alt="...">
-                            <span class="about-shape"></span>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mt-1-9 wow fadeIn" data-wow-delay="150ms">
-                        <div class="ps-xl-5">
-                            <div class="section-title mb-1-9">
-                                <span>About Us</span>
-                                <h2 class="display-6 font-weight-800 mb-0">Loancy will fill your fantasies work out as expected</h2>
-                            </div>
-                            <p class="text-primary lead">We have 20 years of experience in loan services.</p>
-                            <p class="mb-1-9">
-                                We Provide clean, dependable, environmentally friendly, and cost-effective electrical energy to people all over the world in order to save our planet for future generations.
-                            </p>
-                            <div class="row border-top border-bottom py-3 mb-1-9">
-                                <div class="col-sm-6 mb-4 mb-sm-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 me-3">
-                                            <img src="images/04.png" alt="..." class="w-55px">
-                                        </div>
-                                        <div class="flex-grow-1">
-                                            <h4 class="h5 mb-0">300,000 Customers</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 me-3">
-                                            <img src="images/05.png" alt="..." class="w-55px">
-                                        </div>
-                                        <div class="flex-grow-1">
-                                            <h4 class="h5 mb-0">No Prepayment Fees</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="about.html" class="btn-style1">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <span class="shape-01"></span>
-        </section> -->
-
+        
+        
         <!-- SERVICES
         ================================================== -->
-        <section class="bg-light">
+        <section class="bg-light mt-1 pt-0">
             <div class="container">
                 <div class="row mb-2-6 g-5 align-items-end">
                     <div class="col-lg-6 col-xxl-5">
@@ -419,7 +511,7 @@
                     </div>
                 </div>
 
-                <div class="service-carousel owl-carousel owl-theme min-100vw">
+                <div class="service-carousel owl-carousel owl-theme min-100vw mt-1-6">
                     <div class="card card-style5 bg-img cover-background rounded-0" data-background="images/blog-02.jpg">
                         <div class="card-body">
                             <h3 class="mb-4"><a href="personal-loan.html" class="text-white">Personal Loan</a></h3>
@@ -454,6 +546,155 @@
             </div>
         </section>
 
+        <div class="container-card">
+            <div class="heading">
+                <h3>Top Credit Card Providers in UAE</h3>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/03/RAK-Bank.jpg" 
+                         alt="RAK Bank" 
+                         class="img-responsive">
+                </div>
+                
+                <div class="col">
+                    <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/03/FAB-Bank-Personal-Loan.jpg" 
+                         alt="FAB Bank Personal Loan" 
+                         class="img-responsive">
+                </div>
+                
+                <div class="col">
+                    <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/03/Dubai-Islamic-Bank.jpg" 
+                         alt="Dubai Islamic Bank" 
+                         class="img-responsive">
+                </div>
+                
+                <div class="col">
+                    <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/03/ADIB-Bank.jpg" 
+                         alt="ADIB Bank" 
+                         class="img-responsive">
+                </div>
+                
+                <div class="col">
+                    <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/03/ADCB-Bank.jpg" 
+                         alt="ADCB Bank" 
+                         class="img-responsive">
+                </div>
+                
+                <div class="col">
+                    <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/03/Citi-Bank-UAE.jpg" 
+                         alt="Citi Bank UAE" 
+                         class="img-responsive">
+                </div>
+                
+                <div class="col">
+                    <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/03/Deem-Finance-Personal-Loan.jpg" 
+                         alt="Deem Finance Personal Loan" 
+                         class="img-responsive">
+                </div>
+                
+                <div class="col">
+                    <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/03/ADCb-simplylife.jpg" 
+                         alt="ADCb simplylife" 
+                         class="img-responsive">
+                </div>
+                
+                <div class="col">
+                    <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/03/Emirates-Islamic-Bank.jpg" 
+                         alt="Emirates Islamic Bank" 
+                         class="img-responsive">
+                </div>
+                
+                <div class="col">
+                    <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/03/Mashreq.jpg" 
+                         alt="Mashreq" 
+                         class="img-responsive">
+                </div>
+                
+                <div class="col">
+                    <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/03/Emirates-NBD.jpg" 
+                         alt="Emirates NBD" 
+                         class="img-responsive">
+                </div>
+                
+                <div class="col">
+                    <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/03/Najm.jpg" 
+                         alt="Najm" 
+                         class="img-responsive">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <section class="slider">
+                <div class="slider-track">
+                    <div class="slide">
+                        <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/02/Citi_Cashback_card-270_180-.png" alt="Citi Cashback Credit Card">
+                        <h2>Citi Cashback Credit Card</h2>
+                        <p>Minimum Salary AED 8,000</p>
+                        <a href="#apply-loan" 
+                           target="_blank" 
+                           class="btn">Get Approval</a>
+                    </div>
+                    <div class="slide">
+                        <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/02/HSBC_Cashback_new_logo.png" alt="HSBC Cashback Credit Card">
+                        <h2>HSBC Cashback Credit Card</h2>
+                        <p>Minimum Salary AED 10,000</p>
+                        <a href="#apply-loan" 
+                           target="_blank" 
+                           class="btn">Get Approval</a>
+                    </div>
+                    <div class="slide">
+                        <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/03/Citi-Premier-Credit-Card.png" alt="Citi Premier Credit Card">
+                        <h2>Citi Premier Credit Card</h2>
+                        <p>Minimum Salary AED 15,000</p>
+                        <a href="#apply-loan" 
+                           target="_blank" 
+                           class="btn">Get Approval</a>
+                    </div>
+                    <div class="slide">
+                        <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/04/Emirates-Citibank-World-Credit-Card.png" alt="Emirates - Citibank World Credit Card">
+                        <h2>Emirates - Citibank World Credit Card</h2>
+                        <p>Minimum Salary AED 12,000</p>
+                        <a href="#apply-loan" 
+                           target="_blank" 
+                           class="btn">Get Approval</a>
+                    </div>
+                    <div class="slide">
+                        <img src="https://www.creditcardfinder.ae/wp-content/uploads/2022/12/HSBC-Max-Rewards-Card.png" alt="HSBC Max Rewards Credit Card">
+                        <h2>HSBC Max Rewards Credit Card</h2>
+                        <p>Minimum Salary AED 10,000</p>
+                        <a href="#apply-loan" 
+                           target="_blank" 
+                           class="btn">Get Approval</a>
+                    </div>
+                    <div class="slide">
+                        <img src="https://www.creditcardfinder.ae/wp-content/uploads/2016/06/Citibank-Simplicity-Credit-Card.png" alt="Citi Simplicity Credit Card">
+                        <h2>Citi Simplicity Credit Card</h2>
+                        <p>Minimum Salary AED 5,000</p>
+                        <a href="#apply-loan" 
+                           target="_blank" 
+                           class="btn">Get Approval</a>
+                    </div>
+                    <div class="slide">
+                        <img src="https://www.creditcardfinder.ae/wp-content/uploads/2022/12/HSBC-Cash-Plus-Card.png" alt="HSBC Cash + Credit Card">
+                        <h2>HSBC Cash + Credit Card</h2>
+                        <p>Minimum Salary AED 30,000</p>
+                        <a href="#apply-loan" 
+                           target="_blank" 
+                           class="btn">Get Approval</a>
+                    </div>
+                    <div class="slide">
+                        <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/03/Emirates-Citibank-Ultima-Credit-Card.png" alt="Emirates - Citibank Ultima Credit Card">
+                        <h2>Emirates - Citibank World Credit Card</h2>
+                        <p>Minimum Salary AED 36,750</p>
+                        <a href="#apply-loan" 
+                           target="_blank" 
+                           class="btn">Get Approval</a>
+                    </div>
+                </div>
+            </section>
+        </div>
                 <!-- EXTRA
         ================================================== -->
         <section class="bg-img cover-background dark-overlay" data-overlay-dark="8" data-background="images/slider-1.webp">
@@ -471,24 +712,8 @@
                 </div>
             </div>
         </section>
-
-        <!-- CALL TO ACTION
-        ================================================== -->
-        <!-- <section class="bg-img pt-md-24 cover-background dark-overlay" data-overlay-dark="8" data-background="img/bg/bg-01.jpg">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10 col-xl-8 text-center">
-                        <div class="story-video mb-1-9">
-                            <a class="video video_btn" href="https://www.youtube.com/watch?v=Dui0844eNsE">
-                                <i class="fa fa-play"></i>
-                            </a>
-                        </div>
-                        <h2 class="display-4 font-weight-800 mb-0 text-white">Most of the people trust on us for fast services</h2>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
+  
+        
         <!-- PROCESS
         ================================================== -->
         <section>
@@ -551,30 +776,222 @@
             <span class="process-left-shape d-none d-sm-block"></span>
         </section>
 
-        <!-- LOAN APPLICATION
-        ================================================== -->
-        <!-- <section class="loan-app-form white-label bg-img cover-background bg-dark" data-overlay-dark="7" data-background="images/bg-02.jpg">
+        <div class="container">
+            <div class="heading">
+                <h3>Summary of Available Credit Cards in UAE with Annual fees, Minimum Salary required & Key Feature</h3>
+            </div>
+    
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Credit Card Name</th>
+                            <th>Minimum Salary Required (In AED)</th>
+                            <th>Annual Fee (In AED)</th>
+                            <th>Top Feature</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ADCB Islamic Gold Credit Card</td>
+                            <td>8000</td>
+                            <td>0</td>
+                            <td>Travel</td>
+                        </tr>
+                        <tr>
+                            <td>ADIB Cashback Platinum Credit Card</td>
+                            <td>5000</td>
+                            <td>0</td>
+                            <td>Cashback</td>
+                        </tr>
+                        <tr>
+                            <td>Emirates NBD Go4it Credit Card</td>
+                            <td>6000</td>
+                            <td>0</td>
+                            <td>Cinema Offer</td>
+                        </tr>
+                        <tr>
+                            <td>Emirates Islamic Cashback Card</td>
+                            <td>5000</td>
+                            <td>350</td>
+                            <td>Cashback</td>
+                        </tr>
+                        <tr>
+                            <td>Fab Cashback Credit Card</td>
+                            <td>5000</td>
+                            <td>315</td>
+                            <td>Cashback</td>
+                        </tr>
+                        <tr>
+                            <td>Deem Mastercard Titanium Cash Up Credit Card</td>
+                            <td>5000</td>
+                            <td>0</td>
+                            <td>Balance Transfer</td>
+                        </tr>
+                        <tr>
+                            <td>ADCB Simplylife Cashback Credit Card</td>
+                            <td>5000</td>
+                            <td>0</td>
+                            <td>Cashback</td>
+                        </tr>
+                        <tr>
+                            <td>HSBC Cashback Credit Card</td>
+                            <td>5000</td>
+                            <td>313</td>
+                            <td>Cashback</td>
+                        </tr>
+                        <tr>
+                            <td>Emirates Islamic Cashback Plus Card</td>
+                            <td>5000</td>
+                            <td>299</td>
+                            <td>Cashback</td>
+                        </tr>
+                        <tr>
+                            <td>Dubai Islamic Consumer Reward Card</td>
+                            <td>5000</td>
+                            <td>0</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>FAB Islamic Cashback Credit Card</td>
+                            <td>5000</td>
+                            <td>315</td>
+                            <td>Cashback</td>
+                        </tr>
+                        <tr>
+                            <td>Emirates NBD Visa Platinum Credit Card</td>
+                            <td>12000</td>
+                            <td>0</td>
+                            <td>Cinema Offers</td>
+                        </tr>
+                        <tr>
+                            <td>Deem Mastercard Platinum Cash Up Credit Card</td>
+                            <td>10000</td>
+                            <td>0</td>
+                            <td>Cashback</td>
+                        </tr>
+                        <tr>
+                            <td>Emirates NBD Diners Club Credit Card</td>
+                            <td>10000</td>
+                            <td>400</td>
+                            <td>Balance Transfer</td>
+                        </tr>
+                        <tr>
+                            <td>Dubai Islamic Al Islami Classic Credit Card</td>
+                            <td>5000</td>
+                            <td>0</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Citi Cashback Credit Card</td>
+                            <td>8000</td>
+                            <td>0</td>
+                            <td>Cashback</td>
+                        </tr>
+                        <tr>
+                            <td>CBD Super Saver Credit Card</td>
+                            <td>8000</td>
+                            <td>420</td>
+                            <td>Cashback</td>
+                        </tr>
+                        <tr>
+                            <td>ADIB Dana Master Card</td>
+                            <td>8000</td>
+                            <td>299</td>
+                            <td>Balance Transfer</td>
+                        </tr>
+                        <tr>
+                            <td>Citi Premier Credit Card</td>
+                            <td>15000</td>
+                            <td>0</td>
+                            <td>Balance Transfer</td>
+                        </tr>
+                        <tr>
+                            <td>Emirates-Citibank Ultimate Credit Card</td>
+                            <td>18000</td>
+                            <td>800</td>
+                            <td>Travel</td>
+                        </tr>
+                        <tr>
+                            <td>EIB RTA Gold Credit Card</td>
+                            <td>5000</td>
+                            <td>125</td>
+                            <td>Travel</td>
+                        </tr>
+                        <tr>
+                            <td>SCB Titanium Credit Card</td>
+                            <td>10000</td>
+                            <td>0</td>
+                            <td>Cinema Offers</td>
+                        </tr>
+                        <tr>
+                            <td>RAKBANK Géant La Carte Credit Card</td>
+                            <td>5000</td>
+                            <td>0</td>
+                            <td>Dining Offers</td>
+                        </tr>
+                        <tr>
+                            <td>HSBC Zero Credit Card</td>
+                            <td>5000</td>
+                            <td>0</td>
+                            <td>Balance Transfer</td>
+                        </tr>
+                        <tr>
+                            <td>RAKBANK Titanium Credit Card</td>
+                            <td>10000</td>
+                            <td>0</td>
+                            <td>Cashback</td>
+                        </tr>
+                        <tr>
+                            <td>Najm Voyager Signature Credit Card</td>
+                            <td>12000</td>
+                            <td>524</td>
+                            <td>Travel</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    
+            <div class="btn-container">
+                <a href="#apply-loan" 
+                   class="btn" 
+                   title="Apply Online Credit Card in UAE">
+                    Apply for your Free Credit Card Now
+                    <span class="btn-icon">🛡️</span>
+                </a>
+            </div>
+        </div>
+        <section class="bg-img cover-background dark-overlay mt-2-6" data-overlay-dark="8" data-background="images/bg-01.jpg">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="section-title mb-1-9">
-                            <span>Loan Calculator</span>
-                            <h2 class="display-6 text-white font-weight-800 mb-0">Get up to $15,000 fast easy cash loan application</h2>
+                <div class="row mt-n1-9">
+                    <div class="col-sm-6 col-lg-3 mt-1-9 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="text-center">
+                            <h3 class="display-12 display-lg-10 display-xl-4 text-white"><span class="countup">532</span>+</h3>
+                            <p class="mb-0 lead text-white">Loans Approve</p>
                         </div>
                     </div>
-                </div>
-                <div class="row mb-n1-6 calculator-loan">
-                    <div class="col-lg-6 form mt-1-6"></div>
-                    <div class="col-lg-6 mt-1-6">
-                        <div class="ms-xl-5 p-4 p-xl-5 bg-primary text-white">
-                            <label class="results-label">Results:</label>
-                            <div class="results"></div>
+                    <div class="col-sm-6 col-lg-3 mt-1-9 wow fadeInUp" data-wow-delay="150ms">
+                        <div class="text-center">
+                            <h3 class="display-12 display-lg-10 display-xl-4 text-white"><span class="countup">90</span>+</h3>
+                            <p class="mb-0 lead text-white">Daily Payments</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="text-center">
+                            <h3 class="display-12 display-lg-10 display-xl-4 text-white"><span class="countup">80</span>+</h3>
+                            <p class="mb-0 lead text-white">Happy Customers</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 mt-1-9 wow fadeInUp" data-wow-delay="250ms">
+                        <div class="text-center">
+                            <h3 class="display-12 display-lg-10 display-xl-4 text-white"><span class="countup">260</span>+</h3>
+                            <p class="mb-0 lead text-white">Expert People</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section> -->
-
+        </section>
+        
         <!-- TESTIMONIAL
         ================================================== -->
         <section>
@@ -614,20 +1031,7 @@
             <span class="process-left-shape d-none d-sm-block"></span>
         </section>
 
-        <!-- CLIENTS
-        ================================================== -->
-        <section class="bg-light py-10">
-            <div class="container text-center">
-                <div class="client-carousel owl-theme owl-carousel">
-                    <img src="images/01_1.png" alt="...">
-                    <img src="images/02_1.png" alt="...">
-                    <img src="images/03_1.png" alt="...">
-                    <img src="images/04_1.png" alt="...">
-                    <img src="images/05_1.png" alt="...">
-                    <img src="images/06.png" alt="...">
-                </div>
-            </div>
-        </section>
+
 
         <!-- BLOG
         ================================================== -->
@@ -699,8 +1103,8 @@
                 <div class="row mt-n5 pb-6 pb-lg-8">
                     <div class="col-sm-6 col-xl-4 mt-5">                         
                         <div class="footer-logo mb-4">
-                            <a href="index.html">
-                                <img src="images/logo-removebg-preview.png" />
+                            <a href="index.html" >
+                                <img src="images/logo3.png" style="width: 80%; height: 80%;"/>
                         </div>
                         <ul class="list-unstyled mb-4">
                             <li class="d-flex mb-3">
@@ -713,20 +1117,7 @@
                                 <i class="fas fa-map-marker-alt text-secondary display-25 me-4"></i>Dubai
                             </li>
                         </ul>
-                        <ul class="social-icon-style1 ps-0">
-                            <li>
-                                <a href="#!"><i class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li>
-                                <a href="#!"><i class="fab fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#!"><i class="fab fa-youtube"></i></a>
-                            </li>
-                            <li>
-                                <a href="#!"><i class="fab fa-linkedin-in"></i></a>
-                            </li>
-                        </ul>                        
+                                           
                     </div>
                     <div class="col-sm-6 col-xl-2 mt-5">
                         <div class="ps-md-1-9 ps-xl-7">
@@ -734,8 +1125,10 @@
                             <ul class="footer-link mb-0 list-unstyled">
                                 <li class="mb-3"><a href="index.html">Leads Membership</a></li>
                                 <li class="mb-3"><a href="index.html">About us</a></li>
-                                <li class="mb-3"><a href="contact.html">Contact us</a></li>
                                 <li class="mb-3"><a href="blog.html">Blog</a></li>
+                                <li class="mb-3"><a href="contact.html">Contact us</a></li>
+                                <li class="mb-3"><a href="#apply-loan">Apply Loan</a></li>
+
                             </ul>
                         </div>
                     </div>
@@ -745,19 +1138,45 @@
                             <ul class="footer-link mb-0 list-unstyled">
                                 <li class="mb-3"><a href="personal-loan.html">Business Loan</a></li>
                                 <li class="mb-3"><a href="personal-loan.html">Personal Loan</a></li>
+                                <li class="mb-3"><a href="personal-loan.html">Credit Card</a></li>
+
                               
                             </ul>
                         </div>
                     </div>
     
                     <div class="col-sm-6 col-xl-3 mt-5">
-                        <div class="ps-xl-5">
-                            <h3 class="text-white footer-title mb-1-9">Contact Us</h3>
-                            <ul class="footer-link mb-0 list-unstyled">
-                                <li class="mb-3">+(971)551668971</li>
-                                <li class="mb-3">Dubai</li>
-    
-                            </ul>
+                        <div class="ps-md-1-9 ps-xl-0">
+                            <h3 class="text-white footer-title mb-1-9">Newsletter</h3>
+                            <p class="text-white w-90">We help you secure the funding you need to grow your thriving business.</p>
+                            <form class="quform" action="quform/newsletter-two.php" method="post" enctype="multipart/form-data" onclick="">
+
+                                <div class="quform-elements">
+                                    <div class="row">
+
+                                        <!-- Begin Text input element -->
+                                        <div class="col-md-12 mb-3">
+                                            <div class="quform-element mb-0">
+                                                <div class="quform-input">
+                                                    <input class="form-control" id="email_address" type="text" name="email_address" placeholder="Subscribe with us">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Text input element -->
+
+                                        <!-- Begin Submit button -->
+                                        <div class="col-md-12">
+                                            <div class="quform-submit-inner">
+                                                <button class="btn-style1 medium w-100" type="submit">Subscribe</button>
+                                            </div>
+                                            <div class="quform-loading-wrap"><span class="quform-loading"></span></div>
+                                        </div>
+                                        <!-- End Submit button -->
+                                    </div>
+
+                                </div>
+
+                            </form>
                         </div>
                     </div>
                    
