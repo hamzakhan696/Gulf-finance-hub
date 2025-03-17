@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
     <head>
 
         <!-- metas -->
@@ -18,7 +17,9 @@
         <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
         <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <!-- plugins -->
         <link rel="stylesheet" href="css/plugins.css">
     
@@ -31,7 +32,97 @@
         <!-- theme core css -->
         <link href="css/styles.css" rel="stylesheet">
     
+    
+    
     </head>
+
+    <style>
+        .slider {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .slider-track {
+            display: flex;
+            width: 300%; /* 3 slides visible at a time out of total slides */
+            animation: slide 20s infinite linear;
+        }
+
+        .slide {
+            flex: 0 0 33.333%; /* 3 slides visible */
+            max-width: 380px;
+            padding: 15px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .slide img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .slide h2 {
+            font-size: 15px;
+            font-weight: normal;
+            margin: 0 0 10px;
+            line-height: 1;
+        }
+
+        .slide p {
+            margin: 0 0 10px;
+            color: #000000;
+        }
+
+        .btn {
+            display: inline-block;
+            font-size: 15px;
+            border-radius: 5px;
+            color: #ffffff;
+            background-color: #ff399b;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e6308a;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-66.666%); } /* Move two-thirds to show all slides */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 991px) {
+            .slide {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+            .slider-track {
+                width: 500%;
+            }
+            @keyframes slide {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-80%); }
+            }
+        }
+
+        @media (max-width: 767px) {
+            .slide {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            .slider-track {
+                width: 800%;
+            }
+            @keyframes slide {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-87.5%); }
+            }
+        }
+    </style>
 
 <body>
 
@@ -43,7 +134,7 @@
     ================================================== -->
     <div class="main-wrapper">
 
-        <!-- HEADER
+       <!-- HEADER
         ================================================== -->
         <header class="header-style1 menu_area-light">
             <div class="navbar-default border-bottom border-color-light-white">
@@ -92,8 +183,7 @@
                                             <ul>
                                                 <li><a href="personal-loan.html">Personal Loan</a></li>
                                                 <li><a href="business-loan.html">Business Loan</a></li>
-                                                <li><a href="business-loan.html">Credit Card</a></li>
-
+                                                <li><a href="credit-card.html">Credit Card</a></li>                                       
                                             </ul>
                                         </li>
                                         <li>
@@ -126,21 +216,21 @@
 
         <!-- PAGE TITLE
         ================================================== -->
-        <section class="page-title-section bg-img cover-background  top-position1" data-overlay-dark="5" data-background="images/page-title.jpg">
+        <section class="page-title-section bg-img cover-background top-position1" data-overlay-dark="5" data-background="images/page-title.jpg">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="display-3 font-weight-800">Personal Loan</h1>
+                        <h1 class="display-3 font-weight-800">Credit Card</h1>
                         <ul>
                             <li><a href="index.html">Home</a></li>
-                            <li><a href="#!">Personal Loan</a></li>
+                            <li><a href="#!">Credit Card</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- PERSONAL LOAN
+        <!-- BUSINESS LOAN
         ================================================== -->
         <section>
             <div class="container">
@@ -153,11 +243,10 @@
                                 </div>
                                 <div class="widget-content">
                                     <ul class="list-unstyled menu m-0">
-                                        <li class="active"><a href="personal-loan.html">Personal Loan</a></li>
-                                        <li><a href="credit-card.html">Credit Card</a></li>
-                                        <li><a href="business-loan.html">Business Loan</a></li>
-                                        <li><a href="">Home Loan</a></li>
-                                       i>
+                                        <li><a href="personal-loan.html">Personal Loan</a></li>
+                                        <li ><a href="business-loan.html">Business Loan</a></li>
+                                        <li class="active"><a href="credit-card.html">Credit Card</a></li>
+                                        <li><a href="home-loan.html">Home Loan</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -186,82 +275,98 @@
                     <div class="col-lg-8 mt-2-9 order-1 order-lg-2">
                         <div>
                             <div class="mb-1-9 wow fadeIn" data-wow-delay="200ms">
-                                <img src="images/service-details-1.jpg" alt="...">
+                                <img src="images/service-details-2.jpg" alt="...">
                             </div>
                             <div class="mb-1-9 wow fadeIn" data-wow-delay="200ms">
-                                <h2 class="mb-3 h3">Personal Loans</h2>
-                                <p class="mb-0">Personal loan is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                <h2 class="mb-3 h3">Credit Card</h2>
+                                <p class="mb-0">At Gulf Finace Club, we understand that finding the right credit card can significantly impact your financial well-being. That’s why we’re dedicated to helping you make an informed choice. With a diverse selection of credit card options at your fingertips, we’re committed to ensuring you secure the perfect fit for your unique needs.</p>
                             </div>
-                            <div class="row mb-1-9 mt-n4">
-                                <div class="col-md-6 col-lg-5 mt-4 wow fadeIn" data-wow-delay="200ms">
-                                    <h2 class="mb-3 h3">Services offered</h2>
-                                    <ul class="list-style2 mb-0">
-                                        <li>Making this the first true generator</li>
-                                        <li>Generate which looks reasonable</li>
-                                        <li>Unique Identity Number</li>
-                                        <li>Current address proof</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-lg-7 mt-4 wow fadeIn" data-wow-delay="200ms">
-                                    <h2 class="mb-3 h3">The challange</h2>
-                                    <p class="mb-0">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                                </div>
-                            </div>
-                            <div class="mb-1-9 wow fadeIn" data-wow-delay="200ms">
-                                <h2 class="mb-3 h3">What we do?</h2>
-                                <p class="mb-1-6">It has endure not just five centuries. Lorem Ipsum is nothing more than fictitious text for the brand-new printing and typesetting Ipsum check out our round. when a galley of type was scrambled by an unknown printer to create a type specimen book. It has made it through five centuries of electronic typesetting as well.</p>
-                                <p class="mb-0">We assist in the transformation of the world's most important companies into robust organizations that anticipate the agile and unpredictable, respond quickly to disruption, and outcompete rivals. We work with clients who not stow away from the future but rather need characterize clients with high potential and high aspiration.</p>
-                            </div>
+                            <h3 class="mb-3 h5">Apply for Credit Cards Online with Speedy Approval
+                            </h3>
 
-                            <div class="wow fadeIn" data-wow-delay="200ms">
-                                <div id="accordion" class="accordion-style">
-                                    <div class="card mb-4">
-                                        <div class="card-header" id="headingOne">
-                                            <h5 class="mb-0">
-                                                <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">1. What should I include in my personal statement?</button>
-                                            </h5>
+                            <p class=" wow fadeIn" data-wow-delay="200ms">In today's fast-moving world, using credit cards has become really common. They're handy, safe, and come with lots of perks that can help you manage your money better. But with so many choices out there, picking the right one can feel pretty overwhelming. Whether you're getting your first card or thinking about switching to a new one, this guide will give you all the info you need to make smart choices. So let's get started and make managing your money with credit cards easy and stress-free!</p>
+                            <h3 class=" h6">Choosing the Emirates Elite Loan Card
+                            </h3>
+
+                            <p class=" wow fadeIn" data-wow-delay="200ms">In today's fast-moving world, using credit cards has become really common. They're handy, safe, and come with lots of perks that can help you manage your money better. But with so many choices out there, picking the right one can feel pretty overwhelming. Whether you're getting your first card or thinking about switching to a new one, this guide will give you all the info you need to make smart choices. So let's get started and make managing your money with credit cards easy and stress-free!</p>
+
+                            <div class="container">
+                                <section class="slider pt-0">
+                                    <div class="slider-track">
+                                        <div class="slide">
+                                            <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/02/Citi_Cashback_card-270_180-.png" alt="Citi Cashback Credit Card">
+                                            <h2>Citi Cashback Credit Card</h2>
+                                            <p>Minimum Salary AED 8,000</p>
+                                            <a href="#apply-loan" 
+                                               target="_blank" 
+                                               class="btn">Get Approval</a>
                                         </div>
-                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordion">
-                                            <div class="card-body">
-                                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accus antium doloremque laudantium, totam rem aperia eaque ipsa quaec ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
+                                        <div class="slide">
+                                            <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/02/HSBC_Cashback_new_logo.png" alt="HSBC Cashback Credit Card">
+                                            <h2>HSBC Cashback Credit Card</h2>
+                                            <p>Minimum Salary AED 10,000</p>
+                                            <a href="#apply-loan" 
+                                               target="_blank" 
+                                               class="btn">Get Approval</a>
+                                        </div>
+                                        <div class="slide">
+                                            <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/03/Citi-Premier-Credit-Card.png" alt="Citi Premier Credit Card">
+                                            <h2>Citi Premier Credit Card</h2>
+                                            <p>Minimum Salary AED 15,000</p>
+                                            <a href="#apply-loan" 
+                                               target="_blank" 
+                                               class="btn">Get Approval</a>
+                                        </div>
+                                        <div class="slide">
+                                            <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/04/Emirates-Citibank-World-Credit-Card.png" alt="Emirates - Citibank World Credit Card">
+                                            <h2>Emirates - Citibank World Credit Card</h2>
+                                            <p>Minimum Salary AED 12,000</p>
+                                            <a href="#apply-loan" 
+                                               target="_blank" 
+                                               class="btn">Get Approval</a>
+                                        </div>
+                                        <div class="slide">
+                                            <img src="https://www.creditcardfinder.ae/wp-content/uploads/2022/12/HSBC-Max-Rewards-Card.png" alt="HSBC Max Rewards Credit Card">
+                                            <h2>HSBC Max Rewards Credit Card</h2>
+                                            <p>Minimum Salary AED 10,000</p>
+                                            <a href="#apply-loan" 
+                                               target="_blank" 
+                                               class="btn">Get Approval</a>
+                                        </div>
+                                        <div class="slide">
+                                            <img src="https://www.creditcardfinder.ae/wp-content/uploads/2016/06/Citibank-Simplicity-Credit-Card.png" alt="Citi Simplicity Credit Card">
+                                            <h2>Citi Simplicity Credit Card</h2>
+                                            <p>Minimum Salary AED 5,000</p>
+                                            <a href="#apply-loan" 
+                                               target="_blank" 
+                                               class="btn">Get Approval</a>
+                                        </div>
+                                        <div class="slide">
+                                            <img src="https://www.creditcardfinder.ae/wp-content/uploads/2022/12/HSBC-Cash-Plus-Card.png" alt="HSBC Cash + Credit Card">
+                                            <h2>HSBC Cash + Credit Card</h2>
+                                            <p>Minimum Salary AED 30,000</p>
+                                            <a href="#apply-loan" 
+                                               target="_blank" 
+                                               class="btn">Get Approval</a>
+                                        </div>
+                                        <div class="slide">
+                                            <img src="https://www.creditcardfinder.ae/wp-content/uploads/2021/03/Emirates-Citibank-Ultima-Credit-Card.png" alt="Emirates - Citibank Ultima Credit Card">
+                                            <h2>Emirates - Citibank World Credit Card</h2>
+                                            <p>Minimum Salary AED 36,750</p>
+                                            <a href="#apply-loan" 
+                                               target="_blank" 
+                                               class="btn">Get Approval</a>
                                         </div>
                                     </div>
-                                    <div class="card mb-4">
-                                        <div class="card-header" id="headingTwo">
-                                            <h5 class="mb-0">
-                                                <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">2. Do you support banking loan?</button>
-                                            </h5>
-                                        </div>
-                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
-                                            <div class="card-body">
-                                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accus antium doloremque laudantium, totam rem aperia eaque ipsa quaec ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header" id="headingThree">
-                                            <h5 class="mb-0">
-                                                <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">3. What do I get when my account is paid off?</button>
-                                            </h5>
-                                        </div>
-                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-bs-parent="#accordion">
-                                            <div class="card-body">
-                                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accus antium doloremque laudantium, totam rem aperia eaque ipsa quaec ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                </section>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-         <!-- FOOTER
-        ================================================== -->
-      
         <footer class="position-relative bg-img cover-background pt-6 pt-lg-8">
             <div class="container z-index-9 position-relative">
                 <div class="row mt-n5 pb-6 pb-lg-8">
@@ -354,8 +459,6 @@
         </footer>
 
     </div>
-
-
 
     <!-- start scroll to top -->
     <a href="#!" class="scroll-to-top"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
