@@ -17,7 +17,9 @@
         <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
         <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <!-- plugins -->
         <link rel="stylesheet" href="css/plugins.css">
     
@@ -30,10 +32,17 @@
         <!-- theme core css -->
         <link href="css/styles.css" rel="stylesheet">
     
+    
+    
     </head>
     <style>
-        .bg-yellow {
-            background-color: #ffc64d;
+        .accordion-style .btn-link {
+          color: #000;
+          text-decoration: none;
+        }
+        .accordion-style .btn-link:hover {
+          color: #FFC107 !important;
+          text-decoration: none;
         }
         @keyframes slideInLeft {
         from {
@@ -65,7 +74,13 @@
             transform: translateY(0);
         }
     }
-    </style>
+    .animate-on-scroll {
+        opacity: 0; /* Initially hidden */
+    }
+    .animate-on-scroll.active {
+        animation: var(--animation-type) 1s ease-out forwards;
+    }
+      </style>
 
 <body>
 
@@ -77,10 +92,10 @@
     ================================================== -->
     <div class="main-wrapper">
 
-       <!-- HEADER
+        <!-- HEADER
         ================================================== -->
         <header class="header-style1 menu_area-light">
-            <div class="top-bar bg-secondary">
+            <div class="top-bar bg-secondary mb-0">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-9 col-xs-12">
@@ -102,7 +117,7 @@
                     </div>
                 </div>
             </div>
-            <div class="navbar-default border-bottom border-color-light-white">
+            <div class="navbar-default border-bottom border-color-light-white mt-md-0 ">
 
                 <!-- start top search -->
                 <div class="top-search bg-primary">
@@ -185,115 +200,145 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="display-3 font-weight-800">Contact Us</h1>
+                        <h1 class="display-3 font-weight-800">Leads Membership</h1>
                         <ul>
                             <li><a href="index.html">Home</a></li>
-                            <li><a href="#!">Contact us</a></li>
+                            <li><a href="#!">Leads Membership</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT INFO
-        ================================================== -->
-        <section>
-            <div class="container">
-                <div class="row g-xl-5 mt-n1-9">
-                    <div class="col-md-6 col-lg-4 mt-1-9" style="animation: slideInLeft 1s ease-out forwards;">
-                        <div class="bg-yellow text-center px-1-9 py-2-6 h-100 word-wrap">
-                            <i class="ti-location-pin text-white z-index-9 display-8 position-relative mb-3 d-inline-block"></i>
-                            <h4 class="text-white">Office Address</h4>
-                            <p class="opacity7 text-white mb-0 w-80 w-xl-70 mx-auto">Dubai</p>
+     <!-- SERVICES
+================================================== -->
+<section class="py-0 overflow-visible bg-transparent">
+    <div class="container">
+        <div class="position-relative z-index-9 mt-n9">
+            <div class="row g-xl-5 mt-n1-9">
+                <div class="col-md-6 col-lg-4 mt-1-9 animate-on-scroll" data-animation="slideInLeft">
+                    <div class="bg-white shadow border-radius-3 p-1-9 h-100">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 me-3 me-xl-4">
+                                <img src="images/14.png" alt="Personal Loan" class="w-55px">
+                            </div>
+                            <div class="flex-grow-1">
+                                <h3 class="h5"><a href="personal-loan.html" class="font-weight-700">Personal Loan</a></h3>
+                                <p class="mb-0">Unsecured loan for personal needs like expenses or debt consolidation.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 mt-1-9" style="animation: fadeInUp 1s ease-out forwards;">
-                        <div class="bg-yellow text-center px-1-9 py-2-6 h-100 word-wrap">
-                            <i class="ti-mobile text-white z-index-9 display-8 position-relative mb-3 d-inline-block"></i>
-                            <h4 class="text-white">Phone Number</h4>
-                            <p class="d-block opacity7 text-white mb-0">+(971)5516689719</p>
-                            <!-- <p class="opacity7 text-white mb-0">(+44) 152-567-987</p> -->
+                </div>
+                <div class="col-md-6 col-lg-4 mt-1-9 animate-on-scroll" data-animation="fadeInUp">
+                    <div class="bg-white shadow border-radius-3 p-1-9 h-100">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 me-3 me-xl-4">
+                                <img src="images/15.png" alt="Business Loan" class="w-55px">
+                            </div>
+                            <div class="flex-grow-1">
+                                <h3 class="h5"><a href="business-loan.html" class="font-weight-700">Business Loan</a></h3>
+                                <p class="mb-0">Funding for business growth, equipment, or cash flow.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 mt-1-9" style="animation: slideInRight 1s ease-out forwards;">
-                        <div class="bg-yellow text-center px-1-9 py-2-6 h-100 word-wrap">
-                            <i class="ti-email text-white z-index-9 display-8 position-relative mb-3 d-inline-block"></i>
-                            <h4 class="text-white">Email Address</h4>
-                            <p class="d-block opacity7 text-white mb-0">emirateseliteloan@gmail.com</p>
-                            <p class="opacity7 text-white mb-0">www.example.com</p>
+                </div>
+                <div class="col-md-6 col-lg-4 mt-1-9 animate-on-scroll" data-animation="slideInRight">
+                    <div class="bg-white shadow border-radius-3 p-1-9 h-100">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 me-3 me-xl-4">
+                                <img src="images/16.png" alt="Credit Card" class="w-55px">
+                            </div>
+                            <div class="flex-grow-1">
+                                <h3 class="h5"><a href="credit-card.html" class="font-weight-700">Credit Card</a></h3>
+                                <p class="mb-0">Credit for purchases with rewards and flexible payments.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-   <!-- CONTACT FORM
-================================================== -->
-<section class="pt-0">
+<section class="pt-0 mt-1-9">
     <div class="container">
-        <div class="border border-color-light-black">
+        <div class="">
+            <div class="section-title mb-1-6 mt-5 animate-on-scroll" data-animation="fadeInUp" style="text-align: center;">
+                <h1>Apply to get Leads</h1>
+            </div>
+            <div class="animate-on-scroll" data-animation="fadeInUp">
+                <p style="font-size: 14px;" class="mb-1-6">
+                    The Gulf Finace Hub is a reputable company based in the United Arab Emirates, dedicated to delivering exceptional financial services and products. Our mission at The Emirates Elite Loan is to serve as a vital link between UAE residents and financial experts, offering them a convenient platform to access the most advantageous offers presented by leading banks in the UAE.
+                </p>
+            </div>
+          
             <div class="row">
-                <div class="col-lg-6" style="animation: slideInLeft 1s ease-out forwards;">
-                    <iframe class="contact-map" id="gmap_canvas" src="https://maps.google.com/maps?q=Dubai,%20UAE&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="width: 100%; height: 100%; min-height: 400px;"></iframe>
+                <div class="col-lg-6 animate-on-scroll" data-animation="slideInLeft">
+                    <div class="about-img position-relative">
+                        <img src="images/about.sOwoc94U.jpg" alt="..." class="position-relative z-index-9" style="width: 100%;">
+                    </div>
                 </div>
-                <div class="col-lg-6" style="animation: slideInRight 1s ease-out forwards;">
-                    <div class="" style="padding: 70px;">
-                        <div class="section-title mb-1-6">
-                            <span>Get In Touch</span>
-                        </div>
+              
+                <div class="col-lg-6 animate-on-scroll" data-animation="slideInRight">
+                    <div class="p-1-9">
                         <form class="quform" action="quform/contact.php" method="post" enctype="multipart/form-data" onclick="">
                             <div class="quform-elements">
                                 <div class="row">
                                     <!-- Begin Text input element -->
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="quform-element form-group">
+                                            <label for="name" style="display: block; margin-bottom: 5px;">Full Name</label>
                                             <div class="quform-input">
                                                 <input class="form-control" id="name" type="text" name="name" placeholder="Your name here">
                                             </div>
                                         </div>
                                     </div>
                                     <!-- End Text input element -->
-
+                        
                                     <!-- Begin Text input element -->
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="quform-element form-group">
+                                            <label for="email" style="display: block; margin-bottom: 5px;">Email</label>
                                             <div class="quform-input">
                                                 <input class="form-control" id="email" type="text" name="email" placeholder="Your email here">
                                             </div>
                                         </div>
                                     </div>
                                     <!-- End Text input element -->
-
+                        
                                     <!-- Begin Text input element -->
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="quform-element form-group">
+                                            <label for="subject" style="display: block; margin-bottom: 5px;">Employer</label>
                                             <div class="quform-input">
-                                                <input class="form-control" id="subject" type="text" name="subject" placeholder="Your subject here">
+                                                <input class="form-control" id="subject" type="text" name="subject" placeholder="Employer">
                                             </div>
                                         </div>
                                     </div>
                                     <!-- End Text input element -->
-
+                        
                                     <!-- Begin Text input element -->
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="quform-element form-group">
+                                            <label for="phone" style="display: block; margin-bottom: 5px;">Department</label>
                                             <div class="quform-input">
-                                                <input class="form-control" id="phone" type="text" name="phone" placeholder="Your phone here">
+                                                <input class="form-control" id="phone" type="text" name="phone" placeholder="Department">
                                             </div>
                                         </div>
                                     </div>
                                     <!-- End Text input element -->
-
+                        
                                     <!-- Begin Textarea element -->
                                     <div class="col-md-12">
                                         <div class="quform-element form-group">
+                                            <label for="message" style="display: block; margin-bottom: 5px;">Message</label>
                                             <div class="quform-input">
                                                 <textarea class="form-control" id="message" name="message" rows="3" placeholder="Tell us a few words"></textarea>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- End Textarea element -->
-
+                        
                                     <!-- Begin Submit button -->
                                     <div class="col-md-12">
                                         <div class="quform-submit-inner">
@@ -311,10 +356,101 @@
         </div>
     </div>
 </section>
+  <!-- COUNTER
+        ================================================== -->
+        <section class="bg-img cover-background pb-24 dark-overlay" data-overlay-dark="3" data-background="images/bg-07.jpg">
+            <div class="container pb-15 pb-xl-20">
+                <div class="row mt-n1-9">
+                    <div class="col-sm-6 col-lg-3 mt-1-9">
+                        <div class="text-center">
+                            <h3 class="display-12 display-lg-10 display-xl-4 text-white"><span class="countup">532</span>+</h3>
+                            <p class="mb-0 lead text-white">Loans Approve</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 mt-1-9">
+                        <div class="text-center">
+                            <h3 class="display-12 display-lg-10 display-xl-4 text-white"><span class="countup">90</span>+</h3>
+                            <p class="mb-0 lead text-white">Daily Payments</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 mt-1-9">
+                        <div class="text-center">
+                            <h3 class="display-12 display-lg-10 display-xl-4 text-white"><span class="countup">80</span>+</h3>
+                            <p class="mb-0 lead text-white">Happy Customers</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 mt-1-9">
+                        <div class="text-center">
+                            <h3 class="display-12 display-lg-10 display-xl-4 text-white"><span class="countup">260</span>+</h3>
+                            <p class="mb-0 lead text-white">Expert People</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+         <!-- FAQ'S
+        ================================================== -->
+        <section class="py-0 faq-style-1 position-relative z-index-9 overflow-visible bg-transparent mb-8">
+            <div class="container">
+                <div class="row g-0">
+                    <div class="col-lg-7">
+                        <div class="bg-grey p-1-9 p-md-2-9 p-xxl-7">
+                            <div class="section-title-style02 mb-1-9">
+                                <span>Common Faq’s</span>
+                                <h2 class="display-6 font-weight-800 mb-0">Frequently asked general questions</h2>
+                            </div>
+
+                            <div id="accordion" class="accordion-style">
+                                <div class="card mb-4">
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">1. What should I include in my personal statement?</button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                        <div class="card-body">
+                                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accus antium doloremque laudantium, totam rem aperia eaque ipsa quaec ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-4">
+                                    <div class="card-header" id="headingTwo">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">2. Do you support banking loan?</button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                        <div class="card-body">
+                                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accus antium doloremque laudantium, totam rem aperia eaque ipsa quaec ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">3. What do I get when my account is paid off?</button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-bs-parent="#accordion">
+                                        <div class="card-body">
+                                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accus antium doloremque laudantium, totam rem aperia eaque ipsa quaec ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div>
+                            <img src="images/faq-img-1.jpg" style="height: 650px;" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- FOOTER
         ================================================== -->
-      
         <footer class="position-relative bg-img cover-background pt-6 pt-lg-8">
             <div class="container z-index-9 position-relative">
                 <div class="row mt-n5 pb-6 pb-lg-8">
@@ -413,7 +549,31 @@
     <!-- start scroll to top -->
     <a href="#!" class="scroll-to-top"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
     <!-- end scroll to top -->
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll(".animate-on-scroll");
+    
+            const observer = new IntersectionObserver(
+                (entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            const animationType = entry.target.getAttribute("data-animation");
+                            entry.target.style.setProperty("--animation-type", animationType);
+                            entry.target.classList.add("active");
+                            observer.unobserve(entry.target); // Stop observing once animated
+                        }
+                    });
+                },
+                {
+                    threshold: 0.2, // Trigger when 20% of the element is visible
+                }
+            );
+    
+            elements.forEach((element) => {
+                observer.observe(element);
+            });
+        });
+    </script>
     <!-- jQuery -->
     <script src="js/jquery.min.js"></script>
 
