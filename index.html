@@ -45,7 +45,7 @@
 
         .slider-track {
             display: flex;
-            width: 300%; /* 3 slides visible at a time out of total slides */
+            width: 300%; 
             animation: slide 20s infinite linear;
         }
 
@@ -235,6 +235,42 @@
                 font-size: 14px;
             }
         }
+        @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(50%);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .animate-on-scroll {
+        opacity: 0; /* Initially hidden */
+    }
+    .animate-on-scroll.active {
+        animation: var(--animation-type) 1s ease-out forwards;
+    }
         
 </style>
 <body>
@@ -248,6 +284,7 @@
     <div class="main-wrapper">
 
         <header class="header-style2">
+            
 
             <div class="top-bar bg-secondary">
                 <div class="container">
@@ -309,29 +346,29 @@
                                             <a href="#!">Home</a>
                                           
                                         </li>
-                                        <li>
+                                        <li class="mx-2">
                                             <a href="about-us.html">About</a>
                                           
                                         </li>
                                       
-                                        <li>
+                                        <li class="mx-2">
                                             <a href="#!">Service</a>
                                             <ul>
                                                 <li><a href="personal-loan.html">Personal Loan</a></li>
-                                                <li><a href="credit-card.html">Credit Card</a></li>
                                                 <li><a href="business-loan.html">Business Loan</a></li>
+                                                <li><a href="credit-card.html">Credit Card</a></li>
+
                                                 
                                             </ul>
                                         </li>
-                                        <li>
-                                            <a href="#!">Leads Membership </a>
-                                           
-                                        </li>
-                                        <li>
+                                       
+                                        <li class="mx-2">
                                             <a href="blog.html">Blog</a>
-                                           
+                                            <ul>
+                                                <li><a href="blog-details.html">Blog Details</a></li>
+                                            </ul>
                                         </li>
-                                        <li><a href="contact-us.html">Contact Us</a></li>
+                                        <li class="mx-2"><a href="contact-us.html">Contact Us</a></li>
                                     </ul>
                                     <!-- end menu area -->
 
@@ -339,7 +376,7 @@
                                     <div class="attr-nav align-items-xl-center ms-xl-auto main-font">
                                         <ul>
                                             <li class="search"><a href="#!"><i class="fas fa-search"></i></a></li>
-                                            <li class="d-none d-xl-inline-block"><a href="contact.html" class=" medium text-white" style="background-color: #ffc64d; padding: 10px 22px"><span>Leads Membership</span></a></li>
+                                            <li class="d-none d-xl-inline-block"><a href="leads-membership.html" class=" medium text-white" style="background-color: #ffc64d; padding: 10px 22px"><span>Leads Membership </span></a></li>
                                         </ul>
                                     </div>
                                     <!-- end attribute navigation -->
@@ -353,7 +390,7 @@
 
         <!-- BANNER
         ================================================== -->
-        <section class="py-6 py-md-16 py-lg-20 py-xxl-24 bg-img cover-background parallax dark-overlay" data-overlay-dark="7" data-background="images/slide-02.jpg">
+        <section class="py-6 py-md-16 py-lg-20 py-xxl-24 bg-img cover-background parallax dark-overlay" data-overlay-dark="6" data-background="images/slide-02.jpg">
             <div class="container pt-1-9 pt-sm-6 pt-md-0 mt-n1-9">
                 <div class="row align-items-center position-relative z-index-1 justify-content-center">
                     <div class="col-md-11 col-lg-9 col-xl-8 col-xxl-7 text-center">
@@ -366,129 +403,127 @@
             </div>
         </section>
 
-                <!-- LOAN APPLICATION
-        ================================================== -->
-        <section class="loan-app-form bg-img cover-background" data-background="images/bg-03.jpg" id="apply-loan" data-aos="fade-right" data-aos-offset="300"
-        data-aos-easing="ease-in-sine">
+        <section class="loan-app-form bg-img cover-background" data-background="images/bg-03.jpg" id="apply-loan">
             <div class="container">
-              <div class="col-lg-5">
-                <div class="section-title-style02 mb-1-9">
-                  <span>Apply Loan</span>
-                  <h2 class="display-6 font-weight-800 mb-0">Fill Form To Apply for Loans You will get Call Back</h2>
-                </div>
-              </div>
-              <div class="row justify-content-between"> <!-- Added justify-content-between for spacing -->
-                <!-- Form Column -->
-                <div class="col-lg-6 mb-4 mb-lg-0"> <!-- Added margin-bottom for smaller screens -->
-                  <form action="https://formsubmit.co/emirateseliteloan@gmail.com" method="POST" class="modern-form">
-                    <div class="row g-4">
-                      <!-- Name -->
-                      <div class="col-md-6" data-aos="fade-left">
-                        <div class="form-group">
-                          <input type="text" class="form-control modern-input" name="name" placeholder="Your Name" required>
-                        </div>
-                      </div>
-                      <!-- Email -->
-                      <div class="col-md-6" data-aos="fade-left">
-                        <div class="form-group">
-                          <input type="email" class="form-control modern-input" name="email" placeholder="Your Email ID" required>
-                        </div>
-                      </div>
-                      <!-- Nationality -->
-                      <div class="col-md-6" data-aos="fade-left">
-                        <div class="form-group">
-                          <input type="text" class="form-control modern-input" name="nationality" placeholder="Your Nationality">
-                        </div>
-                      </div>
-                      <!-- Loan Amount -->
-                      <div class="col-md-6" data-aos="fade-left">
-                        <div class="form-group">
-                          <input type="number" class="form-control modern-input" name="amount" placeholder="Loan Amount (AED)">
-                        </div>
-                      </div>
-                      <!-- Employment Status -->
-                      <div class="col-md-6" data-aos="fade-left">
-                        <div class="form-group">
-                          <select class="form-select modern-select" name="employment_status">
-                            <option value="" disabled selected>Employment Status</option>
-                            <option value="Salaried">Salaried</option>
-                            <option value="Business Person">Business Person</option>
-                          </select>
-                        </div>
-                      </div>
-                      <!-- Employer/Company -->
-                      <div class="col-md-6" data-aos="fade-left">
-                        <div class="form-group">
-                          <input type="text" class="form-control modern-input" name="company" placeholder="Employer/Company">
-                        </div>
-                      </div>
-                      <!-- Monthly Salary -->
-                      <div class="col-md-6" data-aos="fade-left">
-                        <div class="form-group">
-                          <select class="form-select modern-select" name="salary">
-                            <option value="" disabled selected>Monthly Salary (AED)</option>
-                            <option value="5000-8000">5,000 - 8,000</option>
-                            <option value="8000-10000">8,000 - 10,000</option>
-                            <option value="10000-15000">10,000 - 15,000</option>
-                            <option value="15000-25000">15,000 - 25,000</option>
-                            <option value=">25000">Above 25,000</option>
-                          </select>
-                        </div>
-                      </div>
-                      <!-- Type of Loan -->
-                      <div class="col-md-6" data-aos="fade-left">
-                        <div class="form-group">
-                          <select class="form-select modern-select" name="loan">
-                            <option value="" disabled selected>Type of Loan</option>
-                            <option value="Personal Loan">Personal Loan</option>
-                            <option value="Business Loan">Business Loan</option>
-                            <option value="Mortgage Loan">Mortgage Loan</option>
-                            <option value="Car Loan">Car Loan</option>
-                          </select>
-                        </div>
-                      </div>
-                      <!-- City -->
-                      <div class="col-md-6" data-aos="fade-left">
-                        <div class="form-group">
-                          <select class="form-select modern-select" name="city">
-                            <option value="" disabled selected>City</option>
-                            <option value="Dubai">Dubai</option>
-                            <option value="Abu Dhabi">Abu Dhabi</option>
-                            <option value="Sharjah">Sharjah</option>
-                          </select>
-                        </div>
-                      </div>
-                      <!-- Phone -->
-                      <div class="col-md-6" data-aos="fade-left">
-                        <div class="input-group">
-                          <span class="input-group-text modern-addon">
-                            <img src="images/united_arab_emirates_rectangular_icon_with_frame_64.png" style="width: 30px;" alt="UAE Flag">
-                          </span>
-                          <input id="phone" type="tel" required class="form-control modern-input" value="+971" placeholder="Mobile Number" name="mobile">
-                        </div>
-                      </div>
+                <div class="col-lg-5">
+                    <div class="section-title-style02 mb-1-9 animate-on-scroll" data-animation="fadeInUp">
+                        <span>Apply Loan</span>
+                        <h2 class="display-6 font-weight-800 mb-0">Fill Form To Apply for Loans You will get Call Back</h2>
                     </div>
-          
-                    <!-- Hidden Inputs -->
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_cc" value="hamzakhan286692@gmail.com">
-                    <input type="hidden" name="_autoresponse" value="Thank you for your message. Our representative will contact you soon">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="http://www.emirateeliteloans.com/thankYou.html">
-          
-                    <!-- Submit Button -->
-                    <div class="col-md-12 mt-5">
-                      <button type="submit" id="form-submit" class="theme-btn modern-btn">Submit Application</button>
-                    </div>
-                  </form>
                 </div>
-          
-                <!-- Image Column -->
-                <div class="col-lg-6">
-                    <iframe class="contact-map" id="gmap_canvas" src="https://maps.google.com/maps?q=Dubai,%20UAE&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>                        </div>
-              </div>
+                <div class="row justify-content-between">
+                    <!-- Form Column -->
+                    <div class="col-lg-6 mb-4 mb-lg-0 animate-on-scroll" data-animation="slideInLeft">
+                        <form action="https://formsubmit.co/hamzakhan286692@gmail.com" method="POST" class="modern-form">
+                            <div class="row g-4">
+                                <!-- Name -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control modern-input" name="name" placeholder="Your Name" required>
+                                    </div>
+                                </div>
+                                <!-- Email -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control modern-input" name="email" placeholder="Your Email ID" required>
+                                    </div>
+                                </div>
+                                <!-- Nationality -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control modern-input" name="nationality" placeholder="Your Nationality">
+                                    </div>
+                                </div>
+                                <!-- Loan Amount -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control modern-input" name="amount" placeholder="Loan Amount (AED)">
+                                    </div>
+                                </div>
+                                <!-- Employment Status -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <select class="form-select modern-select" name="employment_status">
+                                            <option value="" disabled selected>Employment Status</option>
+                                            <option value="Salaried">Salaried</option>
+                                            <option value="Business Person">Business Person</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- Employer/Company -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control modern-input" name="company" placeholder="Employer/Company">
+                                    </div>
+                                </div>
+                                <!-- Monthly Salary -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <select class="form-select modern-select" name="salary">
+                                            <option value="" disabled selected>Monthly Salary (AED)</option>
+                                            <option value="5000-8000">5,000 - 8,000</option>
+                                            <option value="8000-10000">8,000 - 10,000</option>
+                                            <option value="10000-15000">10,000 - 15,000</option>
+                                            <option value="15000-25000">15,000 - 25,000</option>
+                                            <option value=">25000">Above 25,000</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- Type of Loan -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <select class="form-select modern-select" name="loan">
+                                            <option value="" disabled selected>Type of Loan</option>
+                                            <option value="Personal Loan">Personal Loan</option>
+                                            <option value="Business Loan">Business Loan</option>
+                                            <option value="Education Loan">Education Loan</option>
+                                            <option value="Credit Card">Credit Card</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- City -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <select class="form-select modern-select" name="city">
+                                            <option value="" disabled selected>City</option>
+                                            <option value="Dubai">Dubai</option>
+                                            <option value="Abu Dhabi">Abu Dhabi</option>
+                                            <option value="Sharjah">Sharjah</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- Phone -->
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <span class="input-group-text modern-addon">
+                                            <img src="images/united_arab_emirates_rectangular_icon_with_frame_64.png" style="width: 30px;" alt="UAE Flag">
+                                        </span>
+                                        <input id="phone" type="tel" required class="form-control modern-input" value="+971" placeholder="Mobile Number" name="mobile">
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <!-- Hidden Inputs -->
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_cc" value="hamzakhan286692@gmail.com">
+                            <input type="hidden" name="_autoresponse" value="Thank you for your message. Our representative will contact you soon">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="https://hamzakhan696.github.io/Gulf-finance-hub/ThankYou.html">
+        
+                            <!-- Submit Button -->
+                            <div class="col-md-12 mt-5">
+                                <button type="submit" id="form-submit" class="theme-btn modern-btn">Submit Application</button>
+                            </div>
+                        </form>
+                    </div>
+        
+                    <!-- Image Column -->
+                    <div class="col-lg-6 animate-on-scroll" data-animation="slideInRight">
+                        <iframe class="contact-map" id="gmap_canvas" src="https://maps.google.com/maps?q=Dubai,%20UAE&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="width: 100%; height: 100%; min-height: 400px;"></iframe>
+                    </div>
+                </div>
             </div>
-          </section>
+        </section>
 
         
         
@@ -692,7 +727,7 @@
         </div>
                 <!-- EXTRA
         ================================================== -->
-        <section class="bg-img cover-background dark-overlay" data-overlay-dark="8" data-background="images/slider-1.webp">
+        <section class="bg-img cover-background dark-overlay" data-overlay-dark="6" data-background="images/slider-1.webp">
             <div class="position-relative z-index-2">
                 <div class="scrolling-text scrolling-left-text mb-1-9 mb-sm-6">
                     <div class="scrolling-marquee">
@@ -956,7 +991,7 @@
                 </a>
             </div>
         </div>
-        <section class="bg-img cover-background dark-overlay mt-2-6" data-overlay-dark="8" data-background="images/bg-01.jpg">
+        <section class="bg-img cover-background dark-overlay mt-2-6" data-overlay-dark="6" data-background="images/bg-01.jpg">
             <div class="container">
                 <div class="row mt-n1-9">
                     <div class="col-sm-6 col-lg-3 mt-1-9 wow fadeInUp" data-wow-delay="100ms">
@@ -1016,12 +1051,11 @@
                 </div>
             </div>
             <div>
-                <img src="images/avatar-01.jpg" class="position-absolute bottom-15 left-20 d-none d-lg-block rounded-circle w-40px" alt="...">
-                <img src="images/avatar-02.jpg" class="position-absolute bottom-40 left-10 d-none d-lg-block rounded-circle" alt="...">
-                <img src="images/avatar-03.jpg" class="position-absolute left-15 left-xl-20 top-20 d-none d-lg-block rounded-circle w-60px" alt="...">
-                <img src="images/avatar-04.jpg" class="position-absolute top-45 right-10 d-none d-lg-block rounded-circle" alt="...">
-                <img src="images/avatar-05.jpg" class="position-absolute top-25 right-15 right-xl-20 d-none d-lg-block rounded-circle w-40px" alt="...">
-                <img src="images/avatar-06.jpg" class="position-absolute bottom-15 right-15 d-none d-lg-block rounded-circle" alt="...">
+                <img src="images/jakarta.png" class="position-absolute bottom-15 left-20 d-none d-lg-block rounded-circle w-40px" alt="...">
+                <img src="images/abudhabi.png" class="position-absolute left-15 left-xl-20 top-20 d-none d-lg-block rounded-circle w-60px" alt="...">
+                <img src="images/sharjah.jpg" class="position-absolute top-45 right-10 d-none d-lg-block rounded-circle w-60px"  alt="...">
+                <img src="images/ajman.jpg" class="position-absolute top-25 right-15 right-xl-20 d-none d-lg-block rounded-circle w-40px" alt="...">
+                <img src="images/uae2jpg.jpg" class="position-absolute bottom-15 right-15 d-none d-lg-block rounded-circle w-100px" alt="...">
             </div>
             <span class="process-left-shape d-none d-sm-block"></span>
         </section>
@@ -1116,10 +1150,10 @@
                     </div>
                     <div class="col-sm-6 col-xl-2 mt-5">
                         <div class="ps-md-1-9 ps-xl-7">
-                            <h3 class="text-white footer-title mb-1-9">Quick Links</h3>
+                            <h3 class="text-white  mb-1-9" style="font-size: 20px; white-space: nowrap;">Quick Links</h3>
                             <ul class="footer-link mb-0 list-unstyled">
-                                <li class="mb-3"><a href="index.html">Leads Membership</a></li>
-                                <li class="mb-3"><a href="index.html">About us</a></li>
+                                <li class="mb-3"><a href="leads-membership.html">Leads Membership</a></li>
+                                <li class="mb-3"><a href="about-us.html">About us</a></li>
                                 <li class="mb-3"><a href="blog.html">Blog</a></li>
                                 <li class="mb-3"><a href="contact.html">Contact us</a></li>
                                 <li class="mb-3"><a href="#apply-loan">Apply Loan</a></li>
@@ -1129,11 +1163,11 @@
                     </div>
                     <div class="col-sm-6 col-xl-3 mt-5">
                         <div class="ps-xl-5">
-                            <h3 class="text-white footer-title mb-1-9">Services</h3>
+                            <h3 class="text-white mb-1-9" style="font-size: 20px; white-space: nowrap;">Services</h3>
                             <ul class="footer-link mb-0 list-unstyled">
-                                <li class="mb-3"><a href="personal-loan.html">Business Loan</a></li>
+                                <li class="mb-3"><a href="business-loan.html">Business Loan</a></li>
                                 <li class="mb-3"><a href="personal-loan.html">Personal Loan</a></li>
-                                <li class="mb-3"><a href="personal-loan.html">Credit Card</a></li>
+                                <li class="mb-3"><a href="credit-card.html">Credit Card</a></li>
 
                               
                             </ul>
@@ -1142,7 +1176,7 @@
     
                     <div class="col-sm-6 col-xl-3 mt-5">
                         <div class="ps-md-1-9 ps-xl-0">
-                            <h3 class="text-white footer-title mb-1-9">Newsletter</h3>
+                            <h3 class="text-white  mb-1-9" style="font-size: 20px; white-space: nowrap;">Newsletter</h3>
                             <p class="text-white w-90">We help you secure the funding you need to grow your thriving business.</p>
                             <form class="quform" action="quform/newsletter-two.php" method="post" enctype="multipart/form-data" onclick="">
 
@@ -1191,7 +1225,31 @@
     <!-- start scroll to top -->
     <a href="#!" class="scroll-to-top"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
     <!-- end scroll to top -->
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll(".animate-on-scroll");
+    
+            const observer = new IntersectionObserver(
+                (entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            const animationType = entry.target.getAttribute("data-animation");
+                            entry.target.style.setProperty("--animation-type", animationType);
+                            entry.target.classList.add("active");
+                            observer.unobserve(entry.target); // Stop observing once animated
+                        }
+                    });
+                },
+                {
+                    threshold: 0.2, // Trigger when 20% of the section is visible
+                }
+            );
+    
+            elements.forEach((element) => {
+                observer.observe(element);
+            });
+        });
+    </script>
     <!-- jQuery -->
     <script src="js/jquery.min.js"></script>
 
